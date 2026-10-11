@@ -1,0 +1,43 @@
+@model ClienteViewModel
+@{
+    ViewData["Title"] = "Detalle del cliente";
+}
+
+<h1 class="h3 mb-3">Detalle del cliente</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Cédula</dt>
+    <dd class="col-sm-9">@Model.Cedula</dd>
+
+    <dt class="col-sm-3">Nombre</dt>
+    <dd class="col-sm-9">@Model.NombreCompleto</dd>
+
+    <dt class="col-sm-3">Correo electrónico</dt>
+    <dd class="col-sm-9">@Model.Correo</dd>
+
+    <dt class="col-sm-3">Dirección</dt>
+    <dd class="col-sm-9">@Model.Direccion</dd>
+
+    <dt class="col-sm-3">Fecha de registro</dt>
+    <dd class="col-sm-9">@Model.FechaRegistro.ToString("dd/MM/yyyy HH:mm")</dd>
+
+    <dt class="col-sm-3">Teléfonos</dt>
+    <dd class="col-sm-9">
+        @if (Model.Telefonos.Count == 0)
+        {
+            <span class="text-muted">Sin teléfonos</span>
+        }
+        else
+        {
+            <ul class="list-unstyled mb-0">
+                @foreach (var telefono in Model.Telefonos)
+                {
+                    <li>@telefono.Numero <span class="text-muted">(@telefono.Tipo)</span></li>
+                }
+            </ul>
+        }
+    </dd>
+</dl>
+
+<a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+<a class="btn btn-outline-secondary" asp-action="Index">Volver al listado</a>

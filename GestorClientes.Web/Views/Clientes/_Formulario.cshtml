@@ -1,0 +1,77 @@
+@model ClienteViewModel
+
+<div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+<input type="hidden" asp-for="Id" />
+
+<div class="row g-3">
+    <div class="col-md-4">
+        <label asp-for="Cedula" class="form-label"></label>
+        <input asp-for="Cedula" class="form-control" />
+        <span asp-validation-for="Cedula" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Nombre" class="form-label"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Apellido" class="form-label"></label>
+        <input asp-for="Apellido" class="form-control" />
+        <span asp-validation-for="Apellido" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Correo" class="form-label"></label>
+        <input asp-for="Correo" class="form-control" />
+        <span asp-validation-for="Correo" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Direccion" class="form-label"></label>
+        <input asp-for="Direccion" class="form-control" />
+        <span asp-validation-for="Direccion" class="text-danger"></span>
+    </div>
+</div>
+
+<h2 class="h5 mt-4">Teléfonos</h2>
+
+<div id="telefonos">
+    @for (var i = 0; i < Model.Telefonos.Count; i++)
+    {
+        <div class="row g-2 mb-2 fila-telefono">
+            <div class="col-md-5">
+                <input asp-for="Telefonos[i].Numero" class="form-control" placeholder="Número" />
+                <span asp-validation-for="Telefonos[i].Numero" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <select asp-for="Telefonos[i].Tipo" class="form-select">
+                    <option value="Móvil">Móvil</option>
+                    <option value="Casa">Casa</option>
+                    <option value="Trabajo">Trabajo</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-outline-danger btn-quitar">Quitar</button>
+            </div>
+        </div>
+    }
+</div>
+
+<button type="button" id="btnAgregarTelefono" class="btn btn-outline-secondary btn-sm">+ Agregar teléfono</button>
+
+<template id="plantillaTelefono">
+    <div class="row g-2 mb-2 fila-telefono">
+        <div class="col-md-5">
+            <input name="Telefonos[0].Numero" class="form-control" placeholder="Número" />
+        </div>
+        <div class="col-md-4">
+            <select name="Telefonos[0].Tipo" class="form-select">
+                <option value="Móvil">Móvil</option>
+                <option value="Casa">Casa</option>
+                <option value="Trabajo">Trabajo</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-outline-danger btn-quitar">Quitar</button>
+        </div>
+    </div>
+</template>
