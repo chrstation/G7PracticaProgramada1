@@ -4,7 +4,7 @@ SISTEMA GESTOR DE CLIENTES
 1. INTEGRANTES FINALES DEL GRUPO
    Herberth Masis Canales 
    Michael Castro Herrera
-   - Nombre y Apellido
+   Carlos Villalobos Picado
 
 2. REPOSITORIO
    https://github.com/chrstation/G7PracticaProgramada1.git
