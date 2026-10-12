@@ -3,6 +3,7 @@ SISTEMA GESTOR DE CLIENTES
 
 1. INTEGRANTES FINALES DEL GRUPO
    Herberth Masis Canales 
+   Michael Castro Herrera
    - Nombre y Apellido
 
 2. REPOSITORIO
