@@ -5,6 +5,7 @@ SISTEMA GESTOR DE CLIENTES
    Herberth Masis Canales 
    Michael Castro Herrera
    Carlos Villalobos Picado
+   Andy Segura Zuñiga
 
 2. REPOSITORIO
    https://github.com/chrstation/G7PracticaProgramada1.git
